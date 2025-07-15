@@ -1,8 +1,97 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:standard_searchbar/new/standard_search_anchor.dart';
 import 'package:standard_searchbar/new/standard_search_bar.dart';
 import 'package:standard_searchbar/new/standard_suggestions.dart';
+
+
+class MenuPage extends StatefulWidget {
+  const MenuPage({super.key});
+
+  @override
+  State<MenuPage> createState() => _MenuPageState();
+}
+class _MenuPageState extends State<MenuPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blueAccent.withOpacity(0.9),
+      body: ListView(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        children: [
+          SizedBox(height: 120),
+          ListTile(
+            leading: Icon(Icons.home_outlined,color: Colors.white),
+            title: Text("Home", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+          SizedBox(height: 6),
+
+          ListTile(
+            leading: Icon(Icons.person_outline_rounded,color: Colors.white),
+            title: Text("Profile", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+          SizedBox(height: 6),
+
+          ListTile(
+            leading: Icon(Icons.location_on_outlined,color: Colors.white),
+            title: Text("Nearby", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+          SizedBox(height: 6),
+          Divider(color: Colors.white60, thickness: 1, indent: 10, endIndent: 12),
+          SizedBox(height: 6),
+
+          ListTile(
+            leading: Icon(Icons.bookmark_add_outlined,color: Colors.white),
+            title: Text("Bookmarks", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+          SizedBox(height: 6),
+
+          ListTile(
+            leading: Icon(Icons.notifications_none_rounded,color: Colors.white),
+            title: Text("Notification", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+          SizedBox(height: 6),
+
+          ListTile(
+            leading: Icon(Icons.messenger_outline_rounded,color: Colors.white),
+            title: Text("Messages", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+          SizedBox(height: 6),
+          Divider(color: Colors.white60, thickness: 1, indent: 10, endIndent: 12),
+          SizedBox(height: 6),
+
+          ListTile(
+            leading: Icon(Icons.settings_outlined,color: Colors.white),
+            title: Text("Setting", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+          SizedBox(height: 6),
+
+          ListTile(
+            leading: Icon(Icons.help_outline_rounded,color: Colors.white),
+            title: Text("Help", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+          SizedBox(height: 6),
+
+          ListTile(
+            leading: Icon(Icons.power_settings_new_rounded,color: Colors.white),
+            title: Text("Logout", style: TextStyle(color: Colors.white, fontSize: 16)),
+            onTap: (){},
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -104,7 +193,7 @@ class _MainPageState extends State<MainPage> {
                       color: Colors.blueAccent,
                       borderRadius: BorderRadius.circular(50),
                     ),
-                    child: const Icon(Icons.filter_alt_rounded, color: Colors.white),
+                    child: const Icon(Icons.tune_rounded, color: Colors.white),
                   )
                 ],
               ),
@@ -116,7 +205,9 @@ class _MainPageState extends State<MainPage> {
                   children: [
                     Padding(padding: const EdgeInsets.only(right: 8.0),
                       child: ElevatedButton(
-                          onPressed: (){},
+                          onPressed: (){
+                            Get.toNamed('/houseDetails');
+                          },
                           child: Text("Hotel",style: TextStyle(color: Colors.blueAccent))
                       )
                     ),
@@ -223,7 +314,7 @@ class _MainPageState extends State<MainPage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                      "Location Name",
+                                      "Jakarta Villa",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 16,
@@ -322,89 +413,4 @@ class _MainPageState extends State<MainPage> {
   }
 }
 
-class MenuPage extends StatefulWidget {
-  const MenuPage({super.key});
 
-  @override
-  State<MenuPage> createState() => _MenuPageState();
-}
-
-class _MenuPageState extends State<MenuPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueAccent.withOpacity(0.9),
-      body: ListView(
-        padding: EdgeInsets.symmetric(horizontal: 10),
-        children: [
-          SizedBox(height: 120),
-          ListTile(
-            leading: Icon(Icons.home_outlined,color: Colors.white),
-            title: Text("Home", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-          SizedBox(height: 6),
-
-          ListTile(
-            leading: Icon(Icons.person_outline_rounded,color: Colors.white),
-            title: Text("Profile", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-          SizedBox(height: 6),
-
-          ListTile(
-            leading: Icon(Icons.location_on_outlined,color: Colors.white),
-            title: Text("Nearby", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-          SizedBox(height: 6),
-          Divider(color: Colors.white60, thickness: 1, indent: 10, endIndent: 12),
-          SizedBox(height: 6),
-
-          ListTile(
-            leading: Icon(Icons.bookmark_add_outlined,color: Colors.white),
-            title: Text("Bookmarks", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-          SizedBox(height: 6),
-
-          ListTile(
-            leading: Icon(Icons.notifications_none_rounded,color: Colors.white),
-            title: Text("Notification", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-          SizedBox(height: 6),
-
-          ListTile(
-            leading: Icon(Icons.messenger_outline_rounded,color: Colors.white),
-            title: Text("Messages", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-          SizedBox(height: 6),
-          Divider(color: Colors.white60, thickness: 1, indent: 10, endIndent: 12),
-          SizedBox(height: 6),
-
-          ListTile(
-            leading: Icon(Icons.settings_outlined,color: Colors.white),
-            title: Text("Setting", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-          SizedBox(height: 6),
-
-          ListTile(
-            leading: Icon(Icons.help_outline_rounded,color: Colors.white),
-            title: Text("Help", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-          SizedBox(height: 6),
-
-          ListTile(
-            leading: Icon(Icons.power_settings_new_rounded,color: Colors.white),
-            title: Text("Logout", style: TextStyle(color: Colors.white, fontSize: 16)),
-            onTap: (){},
-          ),
-        ],
-      ),
-    );
-  }
-}

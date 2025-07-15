@@ -31,6 +31,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_zoom_drawer: ^3.2.0
+  get: ^4.6.6
   standard_searchbar: ^2.1.1
 
   # The following adds the Cupertino Icons font to your application.
