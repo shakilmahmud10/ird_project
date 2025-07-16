@@ -107,7 +107,7 @@ class _HomepageState extends State<Homepage> {
       mainScreen: MainPage(),
       menuScreen: MenuPage(),
       angle: 0,
-      duration: Duration(milliseconds: 700),
+      duration: Duration(milliseconds: 500),
       menuBackgroundColor: Colors.blueAccent,
       // drawerShadowsBackgroundColor: Colors.black,
       // showShadow: true,
@@ -150,8 +150,8 @@ class _MainPageState extends State<MainPage> {
         child: Padding(
             padding:  EdgeInsets.symmetric(horizontal: 20),
             child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
               Row(
                 children: [
                   Column(
@@ -193,7 +193,10 @@ class _MainPageState extends State<MainPage> {
                       color: Colors.blueAccent,
                       borderRadius: BorderRadius.circular(50),
                     ),
-                    child: const Icon(Icons.tune_rounded, color: Colors.white),
+                    child: IconButton(
+                        onPressed: (){},
+                        icon: Icon(Icons.tune_rounded), color: Colors.white
+                    ),
                   )
                 ],
               ),
@@ -252,7 +255,7 @@ class _MainPageState extends State<MainPage> {
               SizedBox(
                 height: 240,
                 child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
+                    scrollDirection: Axis.horizontal,
                     itemCount: 5,
                     itemBuilder: (context, index){
                     return Container(
